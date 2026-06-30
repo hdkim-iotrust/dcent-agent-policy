@@ -24,11 +24,12 @@ from google.oauth2.service_account import Credentials
 TRACKING_SHEET_ID = "1lNJr_75ncoYtpPH_akwNEqWWu6byT-wdgS7CssjVyk4"
 CHANGELOG_SHEET_ID = "1j_qaGMf5tvcHVIdc06zetZT66syjMRAKvMNfaPPx8ic"
 
-# "기본 매크로 답변"으로 간주해 제외할 키워드 (수정 근거 및 사유 / 수정 칸에서 탐지)
-MACRO_KEYWORDS = ["매크로", "macro", "기본 답변", "기본답변", "기본 매크로"]
+# "매크로 처리"로 간주할 키워드 (수정 근거 및 사유 칸에서 탐지)
+MACRO_KEYWORDS = ["매크로", "macro"]
 
-# 추적 시트 열 인덱스 (0-based): A=티켓번호 ... F=수정, G=수정 근거 및 사유
+# 추적 시트 열 인덱스 (0-based): A=티켓번호 ... E=AI답변, F=수정, G=수정 근거 및 사유
 COL_TICKET = 0   # A 티켓번호
+COL_AI = 4       # E AI agent 답변 내용
 COL_FIX = 5      # F 수정
 COL_REASON = 6   # G 수정 근거 및 사유
 
@@ -60,9 +61,11 @@ def suggest_change_type(text: str) -> str:
     return "검토 필요"
 
 
-def is_macro(reason: str, fix: str) -> bool:
-    blob = f"{reason} {fix}".lower()
-    return any(kw.lower() in blob for kw in MACRO_KEYWORDS)
+def is_macro_handled(ai_draft: str, reason: str) -> bool:
+    # AI 답변(E)이 비어 있고 + 수정 근거(G)에 '매크로'가 포함되면 매크로 처리로 간주
+    if ai_draft:
+        return False
+    return any(kw.lower() in reason.lower() for kw in MACRO_KEYWORDS)
 
 
 def main():
@@ -88,14 +91,15 @@ def main():
             return row[i].strip() if len(row) > i and row[i] else ""
 
         ticket = cell(COL_TICKET)
+        ai_draft = cell(COL_AI)
         fix = cell(COL_FIX)
         reason = cell(COL_REASON)
 
-        # 1) 수정이 없으면(=초안 그대로 나감) 제외
+        # 1) 수정이 없으면(=AI 초안 그대로 나감) 제외 → 학습 대상 아님
         if not fix:
             continue
-        # 2) 기본 매크로 답변 처리 건 제외
-        if is_macro(reason, fix):
+        # 2) 매크로 처리 건 제외: AI 답변(E) 비어 있고 + 수정 근거(G)에 '매크로' 포함
+        if is_macro_handled(ai_draft, reason):
             continue
         # 3) 중복 제외
         key = (str(idx), str(ticket))
