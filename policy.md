@@ -94,6 +94,79 @@
 
 ---
 
+## G. 서비스 유형별 처리
+### 스왑(Swap)
+- 제3자 서비스. 미입금/지연은 "디센트 확인 중" 금지 → 업체에 Exchange ID/TXID로 직접 문의 안내(디센트 앱 Swap 화면 우상단 "스왑 내역 보기"에서 확인).
+- 스왑 목록에 코인/페어 안 뜨면: 프로바이더 유동성에 따라 지원 코인·네트워크가 다를 수 있음 → 다른 페어 시도, 안 되면 프로바이더 고객센터 문의. 고정 지원목록으로 단정 금지.
+- 관련 FAQ/URL은 "표준 링크 모음" 참조. XRP 얼라이언스 등 예외는 개발팀 확인(에스컬레이션).
+
+### 디앱(Dapp)
+- 디센트가 확인 가능한 범위만: 지원 네트워크 여부 / 지갑·디앱 네트워크 일치 / 연결 주소 정확성 / 캐시 초기화(설정>Labs>Clear Cache) / 네트워크 환경(Wi-Fi·데이터·VPN) / 앱 버전 / 펌웨어 버전.
+- 과한 약속·비공식 용어 금지("address/derivation issue", "we will identify whether this is a Multichain integration issue" 등). "디센트 연결 문제인지 / 지원 네트워크 범위 문제인지 확인" 수준으로.
+- 디센트 측 정상이면 디앱(제3자) 제공업체에 직접 문의 안내.
+- 모바일 연결 실패 & 지문인증형이면 D'CENT Wallet for Chrome(PC 확장) 대안 안내 — 지문인증형 전용(앱월렛·올인원카드 미지원), Chrome + 데이터 전송 USB 필요.
+
+### 거래소 / 트래블룰(국내)
+- 거래소 출금 한도·정책은 디센트 관여·변경 불가(제3자). 한도 상향은 거래소에 요청.
+- 국내 거래소(업비트/빗썸 등): 트래블룰로 100만원 이상 출금 시 하드웨어 지갑(디센트) 직접 등록 불가. XRP 등 EVM 비호환 자산은 소프트웨어 지갑(메타마스크/카이아)만 100만원 이상 등록 가능.
+  - 우회: 업비트 → 코빗/코인원 출금 → 거기서 디센트 주소를 개인지갑으로 등록 → 디센트로 출금. (100만원 미만은 받기 화면 스크린샷으로 등록 후 직접 출금 가능)
+
+## H. 에이전트 한계 (이미지·TXID)
+- 에이전트는 첨부 이미지/스크린샷을 못 읽고 TXID·온체인 트랜잭션을 직접 분석 못 함.
+  - 값이 이미지로만 있으면 추측 말고 "정확한 주소/전체 TXID를 텍스트로" 재요청. 짧게 잘린 TXID는 조회 불가하므로 전체 TXID 요청.
+  - 코인 종류·지갑 모델 단정 금지(예: '비트코인' 단정 금지). 모호하면 코인·주소·월렛 모드(앱/지문인증형) 확인.
+- (온체인 직접 분석 필요 건은 상담원이 수기 분석 — 추후 개발 예정.)
+
+## I. 자산이 안 보일 때 (네트워크/토큰계정)
+- 입금·스왑 자산이 안 보이면 "보낸 네트워크"부터 확인(다른 네트워크로 보낸 경우가 다수).
+- EVM 네트워크(Ethereum/BNB Smart Chain/Base/Polygon 등)는 같은 지갑 주소 사용 → 실제 보낸 네트워크의 토큰 계정을 추가하면 보임. (예: ETH로 온 AXL→Ethereum에 AXL 추가, Base로 온 RIZE→Base RIZE 추가, BSC로 온 BEAM→BSC BEAM 추가)
+- 지원 토큰인데 목록에 없으면 커스텀 토큰 추가(컨트랙트 주소 입력, 자동 채워지는 심볼·소수점 수정 금지). 가이드는 표준 링크 참조.
+- 잔액이 안 보이면 해당 계정 거래내역 새로고침으로 수동 동기화.
+
+## J. 미지원 네트워크로 전송된 자산
+- 디센트 미지원 네트워크로 보낸 경우: 실패 아님, 자산은 블록체인에 안전. 단 지원 전까지 디센트 앱 표시·관리 불가.
+- 안내 순서: (1) 코인 지원 요청폼 작성→지원 대기 (2) 즉시 접근 필요 시 MetaMask QR 연동 후 해당 네트워크 추가(Chainlist 활용) (3) 같은 24단어를 해당 네트워크 지원 타 지갑에 복구.
+- 디센트는 제3자 지갑/외부 서비스를 추천·검증·단정 안내할 수 없음.
+- 향후 전송 시 거래소 출금 네트워크가 디센트 지원 네트워크와 정확히 일치하는지 먼저 확인하도록 안내.
+
+## K. 지갑 주소 변경 / 복구 (Passphrase·앱지갑)
+- 기존 주소 사라지고 새 주소 표시 원인: ①다른 복구단어로 복구 ②초기화 후 새 지갑 ③25번째 단어(Passphrase) 설정 ④다른 지갑 모드로 변경.
+- 25번째 단어(Passphrase) 설정 시 기존 24단어와 완전히 다른 개인키·주소 생성(정상). 기존 자산은 그 자산을 만든 복구단어로 복구해야 보임.
+- 지문인증형: 초기화 후 해당 24단어로 복구(기기 초기화/복구 URL은 표준 링크 참조). 앱지갑: 설정>전체 지갑 관리>앱 지갑 추가>지갑 가져오기>기존 니모닉.
+- ★보안: 복구단어(니모닉)는 어떤 경우에도 회신/채팅으로 받지 않으며, 고객에게도 보내지 말라고 안내.
+
+## L. 기기/펌웨어 (지문인증형)
+- 강제 종료: PC 연결 해제 후 Down(∨)+전원 10초 이상.
+- 부트로더 진입: OK+전원 10초 이상 → 부트로더에서 PC 재연결 후 펌웨어 업데이트.
+- 화면이 계속 멈춰 있으면 영상 녹화 후 1:1 문의. (Windows/Mac 펌웨어 문제해결 가이드 안내)
+
+## M. 보안 (해킹의심 / 더스팅 / 사기·사칭)
+- 본인이 하지 않은 출금이 있으면: 복구단어/개인키 노출 가능성 → 현재 복구단어 사용 중단, 새 복구단어로 새 지갑 생성, 동일 니모닉 입력했던 앱/사이트 사용 중단, 남은 자산 이동, 거래소·기관에 추가 확인. 완료된 출금은 회수 불가.
+- 예상치 못한 입금(더스팅/프로모션): 지갑 주소는 공개 정보라 누구나 보낼 수 있음. 입금 자체만으로 해킹 아님. 의심 링크/메모 지시 따르지 말고, 모르는 사이트/DApp 연결 금지. 24단어·PIN·앱 비밀번호 미노출이면 안전.
+- 사기·사칭: 미지원/스캠 토큰은 추가하지 말 것("Don't add"). D'CENT Support는 절대 — 검증·복구 위해 사이트 연결 요구, 복구단어 입력 요구, 알 수 없는 컨트랙트/트랜잭션 승인 요구를 하지 않음. SNS 사칭 계정 주의.
+
+## N. 표기/현지화
+- 메뉴·버튼 명칭은 사용자 언어로 표기. 한국어 유저에겐 한글 메뉴명(영어 메뉴명 그대로 쓰지 않음).
+
+## O. 표준 링크 모음 (검증된 URL — 임의 생성 금지, 여기서만 사용)
+- 스왑 미입금 FAQ(ko): https://dcentwallet.zendesk.com/hc/ko/articles/11883921923599
+- squidrouter 지원: https://support.squidrouter.com/
+- 커스텀 토큰 추가 가이드: https://userguide.dcentwallet.com/mobile-app/create-account/how-to-add-a-custom-token-account
+- 코인 지원 요청폼: https://docs.google.com/forms/d/e/1FAIpQLSddydt7fv7D0ATnw49tCsBsex9DpHinAr0sebGb_eQb0ne37g/viewform
+- MetaMask QR 연동 가이드: https://userguide.dcentwallet.com/external-service/qrbasedmetamask
+- Chainlist: https://chainlist.org/
+- MetaMask 네트워크 추가 가이드: https://support.metamask.io/configure/networks/add-a-network-using-chainlist/
+- 지원 코인: https://www.dcentwallet.com/en/supportedcoin
+- 지원 블록체인: https://store.dcentwallet.com/pages/supported-blockchains
+- Dapp 브라우저 가이드: https://userguide.dcentwallet.com/native-service/dapp-browser?fallback=true
+- D'CENT Wallet for Chrome(PC 확장, 지문인증형 전용): https://store-kr.dcentwallet.com/blogs/post/dcent-wallet-for-chrome
+- 기기 초기화(ko): https://userguide.dcentwallet.com/kr/biometric-wallet/setting-menu#device-wipe
+- 지갑 복구(ko): https://userguide.dcentwallet.com/kr/biometric-wallet/recovery
+- Bluetooth 연결: A항목 참조 (zendesk 4410849698447 / userguide android-connect / iphone-connect)
+- (URL 확보 필요 FAQ) 스왑 코인 못받음(en) / 스왑 Expired / 사칭·피싱 보호 / 업비트·빗썸 출금 가능? / 25번째 단어란? / How to revoke token allowances
+
+---
+
 ## F. 변경 이력에서 추가된 규칙 (배치 반영 영역)
 > 변경 이력 시트에서 RULE로 분류된 항목을 여기에 누적합니다. (날짜 / 근거 시트행 / 규칙)
 - (예시) 2026-06-30 · 시트행 2 · 스왑 미입금/지연은 제3자 업체 직접 문의로 안내(핑퐁 최소화), 표준 레퍼런스의 업체 지원 URL 사용.
