@@ -50,8 +50,8 @@ function weeklyReview() {
     const fix = String(row[COL_FIX] || "").trim();
     const reason = String(row[COL_REASON] || "").trim();
 
-    if (!fix) continue;                    // 수정 없음 → 학습 대상 아님
-    if (!ai && hasMacro(reason)) continue; // 매크로 처리 → 제외
+    if (!fix) continue;  // 수정 없음 → 학습 대상 아님
+    if (!ai) continue;   // AI 답변(E)이 비어 있으면 제외 (매크로/직접답변 등 학습할 초안 없음)
     const key = rowNum + "|" + ticket;
     if (seen[key]) continue;               // 중복 → 제외
 
