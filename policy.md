@@ -191,14 +191,22 @@
 
 ---
 
-## Q. D'CENT 앱 스크린샷 판독 (스왑/거래내역 상태 정확 인식)
-스크린샷이 D'CENT 앱 화면이면 화면 유형을 식별하고 "실제 진행 상태"를 정확히 읽습니다. 단정하지 말고 화면에 보이는 그대로 인식합니다.
+## Q. D'CENT 앱 스크린샷 판독 (모든 화면 상태 정확 인식)
+스크린샷이 D'CENT 앱 화면이면 화면 유형을 식별하고 "실제 상태/값"을 정확히 읽습니다. 단정하지 말고 화면에 보이는 그대로 인식합니다.
+- 단계 트래커 공통: ✓(초록 체크)=완료, 스피너(로딩 원)=현재 진행 중, 회색=아직 안 온 단계, ✕(빨간 X)=해당 단계에서 실패.
+- "진행 중 / 대기 중 / Pending / Preparing"류는 실패가 아니라 처리 중. "완료 / Completed"만 최종 완료. "Failed / 실패"만 실패.
 
 [스왑 상세 (Swap Detail / 스왑 상세)]
 - 식별 단서: 상단 "코인A → 코인B" 금액, "진행 상태 / Status", "진행 상황 확인 / Check Progress", Provider(Squid/Exolix 등), Network, Transfer TX ID.
 - 최상단 상태값과 하단 단계 트래커를 함께 읽습니다. 단계 순서:
   ① 트랜잭션 컨펌 완료 → ② 전송 완료 → ③ 블록 컨펌 → ④ 교환 중 → ⑤ 수령 중 → ⑥ 완료
   (English: Transaction confirmed → Transfer complete → Block confirmation → Exchanging → Receiving → Completed)
+- 크로스체인 스왑(예: Squid, ETH→XRPL 등)은 단계 세트가 다릅니다:
+  가스비 준비중 → 트랜잭션 컨펌 대기 중 → 체인 이동 중 → 완료
+  (English: Preparing Gas → Awaiting Transaction Confirmation → Cross-chain Transfer in Progress → Completed)
+  - GasPass ID / Transfer TXID("Waiting to Receive…"면 아직 미수령) / From·To 주소·계정 / Network(From→To)도 함께 읽습니다.
+  - "Failed/실패"(예: Gas Prepared 단계 ✕ + "The transaction failed due to network issues or other factors")면
+    어느 단계에서 실패했는지 읽고 G(스왑)의 Failed 절차 적용(자산 전송 여부에 따라).
 - 판독 규칙:
   - ✓(초록 체크)=완료 단계, 스피너(로딩)=현재 진행 중 단계, 회색=아직 안 온 단계.
   - 스피너 위치로 "현재 어느 단계인지"를 정확히 파악해 보고합니다. (예: "전송 완료까지 됐고 현재 '블록 컨펌' 단계 진행 중")
@@ -211,6 +219,15 @@
 - "진행중(Pending)"이면 아직 온체인 확정 전일 수 있으므로 "실패"로 단정하지 않습니다.
 - "컨트랙트콜(Contract call)" 표기는 스마트 컨트랙트를 통한 정상 거래 방식이며 오류·사기가 아닙니다.
 - 목록 옆 새로고침(↻) 아이콘: 표시가 지연될 때 눌러 동기화하면 최신 상태가 반영됩니다(안내에 활용).
+
+[에러/실패 화면 (Error / Transaction failed)]
+- "Error while preparing transaction" / "Transaction failed" 같은 에러 화면은 코인(예: XLM-01, XDC-01)·네트워크·Error code를 정확히 읽습니다.
+  - 예: "Invalid signature", "InvalidResponseError: Returned error: nonce too high" 등. Error code는 화면 그대로 읽고 지어내지 않습니다.
+  - 앱이 "Please try again in a few minutes / Retry"를 안내하면 재시도를 우선 안내합니다. "nonce too high"류 일시 오류는 대개 재시도/잠시 후 재시도로 해소됩니다.
+  - 반복되면 앱 재시작·네트워크 환경 변경 등 기본 조치 후에도 지속 시, 코인/네트워크/Error code/스크린샷과 함께 1:1 문의를 안내합니다.
+
+[그 외 화면]
+- 지갑/계정/받기/설정 등 어떤 D'CENT 화면이든 제목·표시값을 그대로 읽어 파악합니다. 화면에 없는 값은 지어내지 않습니다.
 
 [공통]
 - 화면에서 읽은 상태·값(코인/금액/TXID/단계)은 [첨부 이미지 분석] 블록에 그대로 정리하되, 주소/TXID 정확값은 부정확 가능 → 필요 시 고객 회신으로 재확인.
