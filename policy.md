@@ -121,10 +121,11 @@
     - Uniswap: https://support.uniswap.org/hc/en-us
     - Squid: https://support.squidrouter.com/
 - 스왑 목록에 코인/페어 안 뜨면: 프로바이더 유동성에 따라 지원 코인·네트워크가 다를 수 있음 → 다른 페어 시도, 안 되면 프로바이더 고객센터 문의. 고정 지원목록으로 단정 금지.
-- 스왑 미입금/못받음 안내 시 관련 FAQ URL을 반드시 첨부합니다(고객 언어에 맞는 URL 우선):
-  - (ko) 스왑한 코인을 받지 못했습니다: https://dcentwallet.zendesk.com/hc/ko/articles/11883921923599
-  - (en) I haven't received my swapped coins: https://dcentwallet.zendesk.com/hc/en-us/articles/11883921923599-I-haven-t-received-my-swapped-coins
-  - (ja) 같은 문서 ID의 /hc/ja/ 로케일 확인 후 추가. 미확보 언어는 임의 생성 금지(없으면 링크 생략).
+- 스왑 하위 이슈에 맞는 FAQ URL을 반드시 첨부합니다(답변 언어 로케일 /hc/ko/ · /hc/en-us/ · /hc/ja/, "해당하는 것만"):
+  - 미수령(스왑 코인 못받음): articles/11883921923599 (en 예: https://dcentwallet.zendesk.com/hc/en-us/articles/11883921923599-I-haven-t-received-my-swapped-coins)
+  - 상태 만료(Expired): articles/14956086466575
+  - 스왑 시 KYC(본인인증) 요구 메시지: articles/13197153293967
+  - 해당하지 않는 FAQ는 붙이지 않습니다(3개 모두 나열 금지). 로케일 URL이 번역 미존재 등으로 없으면 있는 언어로 대체하거나 생략(임의 생성 금지).
 - 그 외 URL은 "표준 링크 모음" 참조. XRP 얼라이언스 등 예외는 개발팀 확인(에스컬레이션).
 - 스왑 상태별 대응:
   - 상태 "Completed/완료"인데 스왑받은 코인이 안 보이는 경우: 온체인상 이미 전달됐고 앱 표시/계정 문제일 확률이 높음.
@@ -187,7 +188,11 @@
 - 메뉴·버튼 명칭은 사용자 언어로 표기. 한국어 유저에겐 한글 메뉴명(영어 메뉴명 그대로 쓰지 않음).
 
 ## O. 표준 링크 모음 (검증된 URL — 임의 생성 금지, 여기서만 사용)
-- 스왑 미입금 FAQ: (ko) https://dcentwallet.zendesk.com/hc/ko/articles/11883921923599 / (en) https://dcentwallet.zendesk.com/hc/en-us/articles/11883921923599-I-haven-t-received-my-swapped-coins
+- 스왑 FAQ (하위 이슈별 · 답변 언어 로케일 /hc/ko/ 또는 /hc/en-us/ · 해당하는 것만 첨부):
+  - 미수령(코인 못받음): articles/11883921923599
+  - 상태 만료(Expired): articles/14956086466575
+  - 스왑 시 KYC 요구: articles/13197153293967
+  (en 예: https://dcentwallet.zendesk.com/hc/en-us/articles/11883921923599-I-haven-t-received-my-swapped-coins)
 - squidrouter 지원: https://support.squidrouter.com/
 - 커스텀 토큰 추가 가이드: https://userguide.dcentwallet.com/mobile-app/create-account/how-to-add-a-custom-token-account
 - 코인 지원 요청폼: https://docs.google.com/forms/d/e/1FAIpQLSddydt7fv7D0ATnw49tCsBsex9DpHinAr0sebGb_eQb0ne37g/viewform
@@ -201,7 +206,7 @@
 - 기기 초기화(ko): https://userguide.dcentwallet.com/kr/biometric-wallet/setting-menu#device-wipe
 - 지갑 복구(ko): https://userguide.dcentwallet.com/kr/biometric-wallet/recovery
 - Bluetooth 연결: A항목 참조 (zendesk 4410849698447 / userguide android-connect / iphone-connect)
-- (URL 확보 필요 FAQ) 스왑 Expired / 사칭·피싱 보호 / 업비트·빗썸 출금 가능? / 25번째 단어란? / How to revoke token allowances
+- (URL 확보 필요 FAQ) 사칭·피싱 보호 / 업비트·빗썸 출금 가능? / 25번째 단어란? / How to revoke token allowances
   ※ Zendesk 헬프센터 문서는 언어별로 같은 문서 ID를 공유(예: /hc/ko/articles/{ID} ↔ /hc/en-us/articles/{ID}-slug). 로케일 URL은 브라우저로 열림 확인 후 추가.
 
 ---
