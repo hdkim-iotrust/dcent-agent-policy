@@ -64,6 +64,8 @@
   반드시 그 안내 문단 끝에 "자세한 내용: URL"(영어: "For more details, please refer to: URL")로 포함합니다.
   - 개별 문서 URL만 사용(예: https://dcentwallet.zendesk.com/hc/ko/articles/...). 헬프센터 홈(.../hc/)만 있으면 링크를 붙이지 않습니다.
   - 정책 문서의 "표준 링크 모음"·스왑 섹션 등에 이미 있는 FAQ·제공업체 URL은 그대로 사용하고, 없는 URL은 임의로 만들지 않습니다.
+  - 링크는 답변 언어와 같은 로케일을 사용합니다(한국어→/hc/ko/, 영어→/hc/en-us/, 일본어→/hc/ja/). doc_summaries의 URL 로케일이 답변 언어와 다르면, 정책 문서의 같은-언어 표준 URL로 교체해 사용합니다.
+  - 도메인·문서 ID는 정책 문서(표준 링크 모음)의 검증된 URL을 우선합니다. doc_summaries에서 찾은 URL의 도메인/문서 ID가 정책 문서와 다르면(예: dcent-support.zendesk.com 등 다른 도메인) 정책 문서의 URL을 사용합니다.
 
 ---
 
