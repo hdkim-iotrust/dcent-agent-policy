@@ -103,7 +103,8 @@
 ### 스왑(Swap)
 - 제3자 서비스. 미입금/지연은 "디센트 확인 중" 금지 → 업체에 Exchange ID/TXID로 직접 문의 안내(디센트 앱 Swap 화면 우상단 "스왑 내역 보기"에서 확인).
 - 스왑 제공업체는 여러 곳(Squid, ChangeNOW, Changelly, Exolix, 1inch, LiFi, Uniswap 등)을 애그리게이트합니다. 반드시 스왑 상세 화면의 "Provider" 값을 읽어 어느 업체인지 확인합니다.
-  - 고객이 Provider를 명시하지 않았고 스왑 상세 스크린샷도 없으면, 특정 업체를 추측·나열하지 말고 "스왑 상세 화면의 Provider명(또는 스왑 상세 스크린샷)"을 먼저 요청한 뒤 해당 업체 지원처로 안내합니다.
+  - "스왑은 제3자 서비스"라는 개념을 설명할 때 예시 업체를 드는 것(예: ChangeNOW, Changelly, Exolix 등)은 괜찮습니다(개념 이해용).
+  - 단, 고객이 특정 Provider를 명시/첨부하지 않았으면 "특정 업체에 문의하라"고 지정하지 말고, "스왑 상세 화면에 표시된 Provider"로 안내합니다. Provider가 확인되면 아래에서 해당 업체 지원 링크만 사용합니다.
   - 업체별 지원 링크(확인된 Provider 하나만 사용):
     - ChangeNow: https://support.changenow.io/hc/en-us
     - Changelly: https://support.changelly.com/en/support/home
