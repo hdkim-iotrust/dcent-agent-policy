@@ -119,7 +119,8 @@
 - 스왑 목록에 코인/페어 안 뜨면: 프로바이더 유동성에 따라 지원 코인·네트워크가 다를 수 있음 → 다른 페어 시도, 안 되면 프로바이더 고객센터 문의. 고정 지원목록으로 단정 금지.
 - 스왑 미입금/못받음 안내 시 관련 FAQ URL을 반드시 첨부합니다(고객 언어에 맞는 URL 우선):
   - (ko) 스왑한 코인을 받지 못했습니다: https://dcentwallet.zendesk.com/hc/ko/articles/11883921923599
-  - (en/ja) 확보 후 "표준 링크 모음(O)"에 추가해 사용. 미확보 시 임의 생성 금지(없으면 링크 생략).
+  - (en) I haven't received my swapped coins: https://dcentwallet.zendesk.com/hc/en-us/articles/11883921923599-I-haven-t-received-my-swapped-coins
+  - (ja) 같은 문서 ID의 /hc/ja/ 로케일 확인 후 추가. 미확보 언어는 임의 생성 금지(없으면 링크 생략).
 - 그 외 URL은 "표준 링크 모음" 참조. XRP 얼라이언스 등 예외는 개발팀 확인(에스컬레이션).
 - 스왑 상태별 대응:
   - 상태 "Completed/완료"인데 스왑받은 코인이 안 보이는 경우: 온체인상 이미 전달됐고 앱 표시/계정 문제일 확률이 높음.
@@ -182,7 +183,7 @@
 - 메뉴·버튼 명칭은 사용자 언어로 표기. 한국어 유저에겐 한글 메뉴명(영어 메뉴명 그대로 쓰지 않음).
 
 ## O. 표준 링크 모음 (검증된 URL — 임의 생성 금지, 여기서만 사용)
-- 스왑 미입금 FAQ(ko): https://dcentwallet.zendesk.com/hc/ko/articles/11883921923599
+- 스왑 미입금 FAQ: (ko) https://dcentwallet.zendesk.com/hc/ko/articles/11883921923599 / (en) https://dcentwallet.zendesk.com/hc/en-us/articles/11883921923599-I-haven-t-received-my-swapped-coins
 - squidrouter 지원: https://support.squidrouter.com/
 - 커스텀 토큰 추가 가이드: https://userguide.dcentwallet.com/mobile-app/create-account/how-to-add-a-custom-token-account
 - 코인 지원 요청폼: https://docs.google.com/forms/d/e/1FAIpQLSddydt7fv7D0ATnw49tCsBsex9DpHinAr0sebGb_eQb0ne37g/viewform
@@ -196,7 +197,8 @@
 - 기기 초기화(ko): https://userguide.dcentwallet.com/kr/biometric-wallet/setting-menu#device-wipe
 - 지갑 복구(ko): https://userguide.dcentwallet.com/kr/biometric-wallet/recovery
 - Bluetooth 연결: A항목 참조 (zendesk 4410849698447 / userguide android-connect / iphone-connect)
-- (URL 확보 필요 FAQ) 스왑 코인 못받음(en) / 스왑 Expired / 사칭·피싱 보호 / 업비트·빗썸 출금 가능? / 25번째 단어란? / How to revoke token allowances
+- (URL 확보 필요 FAQ) 스왑 Expired / 사칭·피싱 보호 / 업비트·빗썸 출금 가능? / 25번째 단어란? / How to revoke token allowances
+  ※ Zendesk 헬프센터 문서는 언어별로 같은 문서 ID를 공유(예: /hc/ko/articles/{ID} ↔ /hc/en-us/articles/{ID}-slug). 로케일 URL은 브라우저로 열림 확인 후 추가.
 
 ---
 
