@@ -98,7 +98,20 @@
 ## G. 서비스 유형별 처리
 ### 스왑(Swap)
 - 제3자 서비스. 미입금/지연은 "디센트 확인 중" 금지 → 업체에 Exchange ID/TXID로 직접 문의 안내(디센트 앱 Swap 화면 우상단 "스왑 내역 보기"에서 확인).
-- 스왑 제공업체는 스왑 상세 화면의 "Provider" 값을 읽어 사용합니다(현재 대개 Squid). 화면에 없으면 "스왑 상세의 Provider"로 지칭하고, 임의 업체명(ChangeNOW/Changelly/Exolix 등)을 추측해 나열하지 않습니다.
+- 스왑 제공업체는 여러 곳(Squid, ChangeNOW, Changelly, Exolix, 1inch, LiFi, Uniswap 등)을 애그리게이트합니다. 반드시 스왑 상세 화면의 "Provider" 값을 읽어 어느 업체인지 확인합니다.
+  - 고객이 Provider를 명시하지 않았고 스왑 상세 스크린샷도 없으면, 특정 업체를 추측·나열하지 말고 "스왑 상세 화면의 Provider명(또는 스왑 상세 스크린샷)"을 먼저 요청한 뒤 해당 업체 지원처로 안내합니다.
+  - 업체별 지원 링크(확인된 Provider 하나만 사용):
+    - ChangeNow: https://support.changenow.io/hc/en-us
+    - Changelly: https://support.changelly.com/en/support/home
+    - Exolix: https://exolix.com/contact
+    - 1inch: https://help.1inch.io/en/
+    - ButterSwap: https://docs.butterswap.me/contact
+    - SushiSwap: Rizwanali@sushi.com
+    - SwapScanner: contact@swapscanner.io
+    - LiFi: https://help.li.fi/hc/en-us/requests/new
+    - Rubic: https://docs.rubic.finance/contacts/support
+    - Uniswap: https://support.uniswap.org/hc/en-us
+    - Squid: https://support.squidrouter.com/
 - 스왑 목록에 코인/페어 안 뜨면: 프로바이더 유동성에 따라 지원 코인·네트워크가 다를 수 있음 → 다른 페어 시도, 안 되면 프로바이더 고객센터 문의. 고정 지원목록으로 단정 금지.
 - 관련 FAQ/URL은 "표준 링크 모음" 참조. XRP 얼라이언스 등 예외는 개발팀 확인(에스컬레이션).
 - 스왑 상태별 대응:
