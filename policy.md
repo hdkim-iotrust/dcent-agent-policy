@@ -162,7 +162,7 @@
   - 값이 이미지로만 있으면 추측 말고 "정확한 주소/전체 TXID를 텍스트로" 재요청. 짧게 잘린 TXID는 조회 불가하므로 전체 TXID 요청.
   - 코인 종류·지갑 모델 단정 금지(예: '비트코인' 단정 금지). 모호하면 코인·주소·월렛 모드(앱/지문인증형) 확인.
 - (온체인 직접 분석 필요 건은 상담원이 수기 분석 — 추후 개발 예정.)
-- 온체인 분석의 네트워크→익스플로러 매핑(Tier 1/2/3)은 별도 파일 explorers.md 참조: https://raw.githubusercontent.com/hdkim-iotrust/dcent-agent-policy/main/explorers.md (온체인 분석 단계에서만 읽음)
+- 온체인 분석의 네트워크→익스플로러 매핑(Tier 1/2/3)은 별도 파일 explorers.md 참조: https://raw.githubusercontent.com/DcentWallet/dcent-agent-policy/main/explorers.md (온체인 분석 단계에서만 읽음)
 - ★온체인으로 확인된 트랜잭션은 답변에 익스플로러 링크 포함: Tier 1·2로 조회에 성공해 상태(Success/Completed 등)를 확인한 경우, 고객이 직접 검증할 수 있도록 해당 익스플로러의 트랜잭션 링크(고객이 제공한 TXID 기준)를 안내 문단 끝에 "온체인에서 직접 확인: {URL}"(영어 "You can verify on-chain here: {URL}")로 포함합니다.
   - Tier 3 등 조회를 실제로 검증하지 못한(렌더 실패·Brave 추정) 링크는 내부노트에만 남기고 고객 답변엔 넣지 않습니다(열리는지 미확인 링크 금지).
   - 링크는 고객이 제공한 TXID 기준으로 구성하며, 미지원 네트워크 오전송 등 익스플로러 링크가 혼란을 주는 맥락은 제외합니다.
