@@ -33,6 +33,7 @@
 ## ⚠️ Tier 2 — 부분 읽기(JS 렌더링, 제한적) → 시도 후 부족하면 Brave 폴백
 - Kaia: https://kaiascan.io/tx/{TXID}
 - opBNB: https://opbnbscan.com/tx/{TXID}
+- Flare: https://flare-explorer.flare.network/tx/{TXID}  (Blockscout 계열, 실제 조회 확인됨 — 티켓 2021092157)
 
 ## 🔌 EVM RPC 폴백 — 익스플로러가 JS 렌더로 안 읽힐 때 (주소의 잔액·사용 이력 판정)
 > 익스플로러 페이지가 안 읽히면(특히 Tier 2 Kaia 등), 아래 public RPC에 JSON-RPC POST로 "주소가 비었는지/쓰인 적 있는지"를 결정론적으로 확인합니다.
@@ -55,7 +56,7 @@
 - 주의: RPC 조회 결과(잔액 0·nonce 0)는 내부 노트에만 근거로 남기고, 고객 주소·값은 policy.md/explorers.md 같은 공개 문서에 절대 기록하지 않습니다.
 
 ## ❌ Tier 3 — Document Reader 불가 → Brave Web Search(`{TXID} site:{explorer}` 또는 `{TXID}`)
-- 네트워크: XRP, XRPL EVM, XDC, Flare, Gnosis, Cronos, Chiliz, VeChain, Conflux, Celo, HyperEVM, Scroll, Injective, Fantom Opera, HYPE Mainnet(Hyperliquid)
+- 네트워크: XRP, XRPL EVM, XDC, Gnosis, Cronos, Chiliz, VeChain, Conflux, Celo, HyperEVM, Scroll, Injective, Fantom Opera, HYPE Mainnet(Hyperliquid)
 - HYPE Mainnet 예외: 익스플로러가 JS SPA + 공식 API가 POST 전용이라 자동 조회 불가.
   내부노트에 https://hypurrscan.io/address/{ADDRESS} 를 첨부하고 "⚠️ CS팀 직접 확인 필요"를 추가.
 
